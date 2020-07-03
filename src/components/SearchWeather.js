@@ -26,7 +26,7 @@ const SearchWeather = () => {
     e.preventDefault();
 
     axios
-      .get("http://api.openweathermap.org/data/2.5/weather", {
+      .get("https://api.openweathermap.org/data/2.5/weather", {
         params: {
           q: location,
           appid: API_KEY,
