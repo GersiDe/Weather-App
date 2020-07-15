@@ -23,3 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
+.prettierrc
+
+/src/.prettierrc
+/src/setupTest.js
+/src/serviceWorker.js
+/src/App.test.js

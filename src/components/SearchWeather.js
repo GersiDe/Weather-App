@@ -46,14 +46,26 @@ const SearchWeather = () => {
         setCountry(response.data.sys.country);
         setNumber(!number);
 
-        console.log(response.data);
-        console.log(number);
+        alertMessage("", "");
+      })
+      .catch((error) => {
+        alertMessage(
+          location,
+          "is not a valid place , please choose another location"
+        );
+        console.log(error.message);
       });
   }
 
   function toggleModal() {
     setModal(!modal);
   }
+
+  let alertMessage = (location, message) => {
+    document.querySelector(".error-msg").innerHTML = `<p>
+    ${location} ${message}
+  </p>`;
+  };
 
   return (
     <div className="main_content">
@@ -74,6 +86,7 @@ const SearchWeather = () => {
             alt="Submit"
             className="zoomIcon"
           />
+          <div className="error-msg"></div>
         </form>
         <div onClick={toggleModal} className="search_bar__help">
           <img src={require("../img/question.png")} alt="help" />
